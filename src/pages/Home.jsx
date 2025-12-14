@@ -194,7 +194,8 @@ export default function Home() {
             <div className="products-grid">
               {products.map((product, index) => (
                 <div key={product._id || index} className="product-card">
-                  <div className="product-image-container">
+                  <div className="product-card-inner">
+                    <div className="product-image-container">
                     {product.images && product.images.length > 0 ? (
                       <>
                         <img 
@@ -223,31 +224,31 @@ export default function Home() {
                     <h3 className="product-name">{product.name}</h3>
                     <div className="product-info">
                       <div className="info-row">
-                        <span className="info-label">Product type:</span>
+                        <span className="info-label">Product type -</span>
                         <span className="info-value">{product.type || 'N/A'}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">Quantity Stock:</span>
-                        <span className="info-value">{product.stock || 0}</span>
+                        <span className="info-label">Quantity Stock -</span>
+                        <span className="info-value">{product.stock || product.quantity || 0}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">MRP:</span>
+                        <span className="info-label">MRP-</span>
                         <span className="info-value">{formatPrice(product.mrp || 0)}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">Selling Price:</span>
+                        <span className="info-label">Selling Price -</span>
                         <span className="info-value">{formatPrice(product.selling_price || 0)}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">Brand Name:</span>
+                        <span className="info-label">Brand Name -</span>
                         <span className="info-value">{product.brand_name || 'N/A'}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">Total Number of images:</span>
+                        <span className="info-label">Total Number of images -</span>
                         <span className="info-value">{product.images?.length || 0}</span>
                       </div>
                       <div className="info-row">
-                        <span className="info-label">Exchange Eligibility:</span>
+                        <span className="info-label">Exchange Eligibility -</span>
                         <span className="info-value">{product.exchange_or_return === 'yes' ? 'YES' : 'NO'}</span>
                       </div>
                     </div>
@@ -317,6 +318,7 @@ export default function Home() {
                         </svg>
                       </button>
                     </div>
+                  </div>
                   </div>
                 </div>
               ))}

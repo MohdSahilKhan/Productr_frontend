@@ -1,4 +1,4 @@
-import api from "./axios";
+import api from "./apiClient";
 
 export const getProducts = (published) => {
   return api.get(`/products?published=${published}`);

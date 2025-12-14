@@ -2,7 +2,7 @@
 
 .products-content-area {
   flex: 1;
-  padding: 24px 32px;
+  padding: 32px;
   margin: 0;
   overflow: auto;
   border-left: 1px solid #0b0f7b;
@@ -226,21 +226,30 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
   width: 100%;
+  padding: 0;
 }
 
-/* Product Card */
+/* Product Card - Outer Box */
 .product-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Card - Inner Box */
+.product-card-inner {
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s;
-}
-
-.product-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
 }
 
 .product-image-container {
@@ -269,25 +278,33 @@
 
 .image-dots {
   position: absolute;
-  bottom: 12px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   z-index: 2;
+  background: rgba(240, 240, 240, 0.9);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
 }
 
 .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: #d3d3d3 !important;
   cursor: pointer;
   transition: all 0.3s;
+  flex-shrink: 0;
+  display: block;
 }
 
 .dot.active {
-  background: #ffffff;
+  background: #ff6b35 !important;
   width: 8px;
   height: 8px;
 }
